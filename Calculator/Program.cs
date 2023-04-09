@@ -19,22 +19,12 @@ static void LeValores()
 //Decide a operação aritmética que o usuário irá realizar
 static void DecideOperacao(string operation, float v1, float v2)
 {
-
-    if (operation == "+")
+    switch (operation)
     {
-        Soma(v1, v2);
-    }
-    else if (operation == "-")
-    {
-        Subtracao(v1, v2);
-    }
-    else if (operation == "/")
-    {
-        Divisao(v1, v2);
-    }
-    else if (operation == "*")
-    {
-        Multiplicacao(v1, v2);
+        case "+": Soma(v1, v2); break;
+        case "-": Subtracao(v1, v2); break;
+        case "/": Divisao(v1, v2); break;
+        case "*": Multiplicacao(v1, v2); break;
     }
 }
 static void Soma(float v1, float v2)
