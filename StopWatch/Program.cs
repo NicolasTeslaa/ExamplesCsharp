@@ -23,7 +23,21 @@ static void Menu()
         multiplier = 60;
     if (time == 0)
         System.Environment.Exit(0);
-    Start(time * multiplier);
+    PreStart(time * multiplier);
+}
+static void PreStart(int time)
+{
+    Console.Clear();
+    Console.WriteLine("Preparar ...");
+    Thread.Sleep(1000);
+    Console.Clear();
+    Console.WriteLine("Apontar ...");
+    Thread.Sleep(1000);
+    Console.Clear();
+    Console.WriteLine("Fogo...");
+    Thread.Sleep(1000);
+    Console.Clear();
+    Start(time);
 }
 static void Start(int time)
 {
