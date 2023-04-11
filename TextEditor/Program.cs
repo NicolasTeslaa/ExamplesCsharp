@@ -7,7 +7,6 @@ static void Menu()
     Console.WriteLine("2 - Novo Arquivo");
     Console.WriteLine("0 - Sair");
     short option = short.Parse(Console.ReadLine());
-
     switch (option)
     {
         case 0: System.Environment.Exit(0); break;
@@ -15,14 +14,12 @@ static void Menu()
         case 2: Editar(); break;
         default: Menu(); break;
     }
-
 }
 static void Abrir()
 {
     Console.Clear();
     Console.WriteLine("Qual caminho do arquivo ?");
     string path = Console.ReadLine();
-
     using (var file = new StreamReader(path))
     {
         string text = file.ReadToEnd();
