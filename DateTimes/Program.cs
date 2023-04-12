@@ -1,4 +1,4 @@
 ﻿using DateTimes;
 
 
-FormattingDate.FormatandoData();
+CultureInfo.AdicionaCultura();
