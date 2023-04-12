@@ -26,6 +26,12 @@ namespace DateTimes
             //formatação padrão da data minima
             var dateFormatterMinimal = String.Format("{0:d}", dataAtual);
             Console.WriteLine(dateFormatterMinimal);
+            //formatação padrão da data mês e ano
+            var allCaracters = String.Format("{0:y}", dataAtual);
+            Console.WriteLine(allCaracters);
+            //formatação padrão da data tipo JSON
+            var typeJson = String.Format("{0:s}", dataAtual);
+            Console.WriteLine(typeJson);
         }
     }
 }
