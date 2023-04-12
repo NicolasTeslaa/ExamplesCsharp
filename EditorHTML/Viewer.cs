@@ -1,6 +1,7 @@
 using System.Text.RegularExpressions;
+using EditorHTML;
 
-namespace EditorHTML
+namespace EditorHtml
 {
     public class Viewer
     {
@@ -11,17 +12,40 @@ namespace EditorHTML
             Console.ForegroundColor = ConsoleColor.Black;
             Console.Clear();
             Console.WriteLine("MODO VISUALIZAÇÃO");
-            Console.WriteLine("---------------------------------");
+            Console.WriteLine("----------------------------------------");
             Replace(text);
-            Console.WriteLine("---------------------------------");
+            Console.WriteLine("----------------------------------------");
+            Console.WriteLine("Pressione qualquer tecla para voltar ao menu");
             Console.ReadKey();
             Menu.Show();
         }
 
         public static void Replace(string text)
         {
-            //traz para variavel  tudo que está dentro da tag strong
+
+            //pega a tag <strong e faz com que apareça na opção de visualização
             var strong = new Regex(@"<\s*strong[^>]*>(.*?)<\s*/\s*strong>");
+            var words = text.Split(' ');
+            for (var i = 0; i < words.Length; i++)
+            {
+                if (strong.IsMatch(words[i]))
+                {
+                    Console.ForegroundColor = ConsoleColor.Blue;
+                    Console.Write(
+                        words[i].Substring(
+                            words[i].IndexOf('>') + 1,
+                            ((words[i].LastIndexOf('<') - 1) - words[i].IndexOf('>'))
+                        )
+                    );
+                    Console.Write(" ");
+                }
+                else
+                {
+                    Console.ForegroundColor = ConsoleColor.Black;
+                    Console.Write(words[i]);
+                    Console.Write(" ");
+                }
+            }
         }
     }
 }
