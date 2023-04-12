@@ -1,6 +1,4 @@
-﻿Console.Clear();
+﻿using DateTimes;
 
-//pega a data atual
-var data = DateTime.Now;
 
-Console.WriteLine(data);
+DataFixa.DataFixaAnexada();
