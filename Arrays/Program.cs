@@ -1,3 +1,3 @@
 ﻿using Arrays;
 
-PercorrendoArray.Metodo();
+ListaFuncionarios.CreateList();
