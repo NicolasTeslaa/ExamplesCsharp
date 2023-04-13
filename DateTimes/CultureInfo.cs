@@ -5,7 +5,6 @@ namespace DateTimes
     {
         public static void AdicionaCultura()
         {
-
             //só é necessário usar essas culture info em casos especificos quando o fuso horário é diferente do requirido
             //cria a cultureInfo
             var br = new System.Globalization.CultureInfo("pt-BR");
