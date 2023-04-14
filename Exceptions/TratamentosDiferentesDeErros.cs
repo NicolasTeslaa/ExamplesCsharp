@@ -34,7 +34,7 @@ namespace Exceptions
         public static void Salvar(string texto)
         {
             if (string.IsNullOrEmpty(texto))
-                throw new Exception("O texto não pode ser nulo ou vazio");
+                throw new ArgumentNullException("O texto não pode ser nulo ou vazio");
         }
     }
 
