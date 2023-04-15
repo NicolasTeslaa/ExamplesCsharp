@@ -26,7 +26,7 @@ namespace Exceptions
             {
                 // mostra a mensagem do erro
                 Console.WriteLine($"Erro ao exercutar procedimento     {ex.Message}");
-            }
+            }   
         }
 
 
