@@ -13,7 +13,19 @@ namespace Encapsulation.Models
         private decimal saldo { get; set; }
         public void Sacar(decimal valor)
         {
-            saldo -= valor;
+            if (saldo >= valor)
+            {
+                saldo -= valor;
+                Console.WriteLine("Saque Realizado com sucesso");
+            }
+            else
+            {
+                Console.WriteLine("Valor indisponivel");
+            }
+        }
+        public void ExibirSaldo()
+        {
+            Console.WriteLine($"Seu Saldo: {saldo}");
         }
     }
 }
