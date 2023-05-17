@@ -8,8 +8,14 @@ var resultado = from m in nomes
                 where m.Contains('o')
                 select m;
 
-foreach(var item in resultado)
-        Console.WriteLine(item);
-
+exibeResultado(resultado);
 
 //segundo exemplo mais compacto
+var resultadoCompacto = nomes.Where(n => n.Contains('s'));
+exibeResultado(resultadoCompacto);
+
+static void exibeResultado(IEnumerable<string> resultado)
+{
+    foreach (var item in resultado)
+        Console.WriteLine(item);
+}
