@@ -1,7 +1,5 @@
 ﻿List<string> nomes = new List<string>()
-        {
-        "ana", "nicolas", "lucas", "carla","alberto"
-        };
+        {"ana", "nicolas", "lucas", "carla","alberto"};
 
 // primeiro exemplo extenso
 var resultado = from m in nomes
