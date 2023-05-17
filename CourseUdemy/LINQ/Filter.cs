@@ -28,9 +28,10 @@ namespace LINQ
         public static void filtraNome()
         {
             var produtosNome = listaProdutos
-                                            .Where(p => p.Preco >= 20)
-                                            .OrderBy(p => p.Nome);
+                                            .Where(p => p.Preco >= 50)
+                                            .OrderBy(p => p.Preco);
 
+            Console.WriteLine("\nProdutos filtrados por nome");
             foreach (var produto in produtosNome)
             {
                 Console.WriteLine($"{produto.Nome} \t{produto.Preco}");
