@@ -2,7 +2,40 @@ namespace LINQ
 {
     public class Filter
     {
+        private static List<Produto> listaProdutos = Data.GetProdutos();
         // WHERE - filtra uma coleção de objetos com base em uma condição, retorna um BOOL
+        public static void filtraEletronicos()
+        {
+            Console.WriteLine("\n Produtos Eletrônicos");
+            var produtosEletronicos = listaProdutos
+                                                    .Where(p => p.Categoria == "Eletrônicos");
+            foreach (var produto in produtosEletronicos)
+            {
+                Console.WriteLine($"{produto.Nome} \t{produto.Preco:C2}");
+            }
+        }
+
+        public static void filtraMaiorValor()
+        {
+            Console.WriteLine("\n Produtos mais Caros");
+            var produtosCaros = listaProdutos
+                                            .Where(pc => pc.Preco >= 50);
+            foreach (var produto in produtosCaros)
+            {
+                Console.WriteLine($"{produto.Nome} \t{produto.Preco:C2} \t{produto.Estoque}");
+            }
+        }
+        public static void filtraNome()
+        {
+            var produtosNome = listaProdutos
+                                            .Where(p => p.Preco >= 20)
+                                            .OrderBy(p => p.Nome);
+
+            foreach (var produto in produtosNome)
+            {
+                Console.WriteLine($"{produto.Nome} \t{produto.Preco}");
+            }
+        }
 
     }
 }
