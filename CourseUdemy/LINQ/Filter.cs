@@ -38,5 +38,10 @@ namespace LINQ
             }
         }
 
+// ordenando por mais de um critério
+        public static void filtraCategoriaNome(){
+            Console.WriteLine("\n Produtos ordenados por categoria e nome:");
+            
+        }
     }
 }
