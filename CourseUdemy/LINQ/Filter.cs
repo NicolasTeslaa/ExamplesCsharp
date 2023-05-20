@@ -44,9 +44,11 @@ namespace LINQ
             Console.WriteLine("\n Produtos ordenados por categoria e nome:");
             var produtosPorCategoriaNome = listaProdutos.OrderBy(p => p.Categoria)
                                                                                         .ThenBy(p => p.Nome);
+
+            string? categoriaAnterior = "";
             foreach (var produto in produtosPorCategoriaNome)
             {
-                Console.WriteLine($"{produto.Id}\t {produto.Nome} \t{produto.Categoria} ");
+                Console.WriteLine($"{produto.Nome} \t{produto.Categoria}");
             }
         }
     }
