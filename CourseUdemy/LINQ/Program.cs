@@ -1,3 +1,3 @@
 ﻿using LINQ;
 
-Filter.filtraNome();
+Filter.filtraCategoriaNome();
