@@ -38,17 +38,22 @@ namespace LINQ
             }
         }
 
-        // ordenando por mais de um critério
+        // ordenando por categoria 
         public static void filtraCategoriaNome()
         {
-            Console.WriteLine("\n Produtos ordenados por categoria e nome:");
-            var produtosPorCategoriaNome = listaProdutos.OrderBy(p => p.Categoria)
-                                                                                        .ThenBy(p => p.Nome);
+            Console.WriteLine("\n Produtos ordenados por categoria:");
+            var produtosPorCategoriaNome = listaProdutos.OrderBy(p => p.Categoria);
+                                                                                    
 
             string? categoriaAnterior = "";
             foreach (var produto in produtosPorCategoriaNome)
             {
-                Console.WriteLine($"{produto.Nome} \t{produto.Categoria}");
+                if (produto.Categoria != categoriaAnterior)
+                {
+                    Console.WriteLine($"    {produto.Categoria}: ");
+                    categoriaAnterior = produto.Categoria;
+                }
+                Console.WriteLine($"             {produto.Nome}");
             }
         }
     }
