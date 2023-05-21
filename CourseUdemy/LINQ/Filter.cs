@@ -54,15 +54,21 @@ namespace LINQ
                 Console.WriteLine($"             {produto.Nome}");
             }
         }
-    
-        public static void filtraPrecoComNovaRegra(){
+
+        public static void filtraPrecoComNovaRegra()
+        {
             var resultado = listaProdutos.Where(p => p.Preco < 500)
                                                         .OrderBy(p => p.Nome)
                                                         .Select(p => new
                                                         {
                                                             NomeProduto = p.Nome.ToUpper(),
-                                                            PrecoComAumento = p.Preco*1.1
+                                                            PrecoComAumento = p.Preco * 1.1
                                                         });
+
+            foreach (var produto in resultado)
+            {
+                Console.WriteLine($"{produto.NomeProduto}, \tPreço com Aumento: {produto.PrecoComAumento}");
+            }
         }
 
     }
