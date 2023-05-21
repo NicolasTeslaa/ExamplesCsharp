@@ -39,7 +39,7 @@ namespace LINQ
         }
 
         // ordenando por categoria 
-        public static void filtraCategoriaNome()
+        public static void filtraCategoria()
         {
             Console.WriteLine("\n Produtos ordenados por categoria:");
             var produtosPorCategoriaNome = listaProdutos.OrderBy(p => p.Categoria);
