@@ -67,7 +67,7 @@ namespace LINQ
 
             foreach (var produto in resultado)
             {
-                Console.WriteLine($"{produto.NomeProduto}, \tPreço com Aumento: {produto.PrecoComAumento}");
+                Console.WriteLine($"{produto.NomeProduto} \tPreço com Aumento: {produto.PrecoComAumento}");
             }
         }
 
