@@ -64,10 +64,11 @@ namespace LINQ
                                                             NomeProduto = p.Nome.ToUpper(),
                                                             PrecoComAumento = p.Preco * 1.1
                                                         });
+                Console.Clear();
 
             foreach (var produto in resultado)
             {
-                Console.WriteLine($"{produto.NomeProduto} \tPreço com Aumento: {produto.PrecoComAumento}");
+                Console.WriteLine($"{produto.NomeProduto} \tPreço com 10%: {produto.PrecoComAumento:C2}");
             }
         }
 
