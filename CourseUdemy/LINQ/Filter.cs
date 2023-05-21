@@ -64,7 +64,7 @@ namespace LINQ
                                                             NomeProduto = p.Nome.ToUpper(),
                                                             PrecoComAumento = p.Preco * 1.1
                                                         });
-                Console.Clear();
+            Console.Clear();
 
             foreach (var produto in resultado)
             {
